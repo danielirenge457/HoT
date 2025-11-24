@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer — Hope of Tomorrow</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+      <h1>Become a Volunteer</h1>
+      <p>Become a part of Hope of Tomorrow and help us empower vulnerable communities. Fill in the form below with your details, experience, and skills to start volunteering.</p>
+
+      <form id="volunteerForm" style="max-width:800px; margin:0 auto; background:white; padding:30px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+        
+        <!-- Personal Information -->
+        <h3 style="margin-bottom:15px; color:#1a1a1a;">Personal Information</h3>
+        <input type="text" id="fullName" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0;">
+        <input type="email" id="email" placeholder="Email Address" required style="width:100%; padding:10px; margin:10px 0;">
+        <input type="tel" id="phone" placeholder="Phone Number" required style="width:100%; padding:10px; margin:10px 0;">
+        <input type="text" id="dob" placeholder="Date of Birth" onfocus="(this.type='date')" required style="width:100%; padding:10px; margin:10px 0;">
+        
+        <!-- Location & Nationality -->
+        <h3 style="margin-bottom:15px; color:#1a1a1a;">Location</h3>
+        <input type="text" id="address" placeholder="Address" required style="width:100%; padding:10px; margin:10px 0;">
+        <input type="text" id="city" placeholder="City/Town" required style="width:100%; padding:10px; margin:10px 0;">
+        <input type="text" id="country" placeholder="Country" required style="width:100%; padding:10px; margin:10px 0;">
+        <input type="text" id="nationality" placeholder="Nationality" required style="width:100%; padding:10px; margin:10px 0;">
+        
+        <!-- Education -->
+        <h3 style="margin-bottom:15px; color:#1a1a1a;">Education</h3>
+        <select id="educationLevel" required style="width:100%; padding:10px; margin:10px 0;">
+          <option value="">Select Education Level</option>
+          <option value="Primary">Primary</option>
+          <option value="Secondary">Secondary</option>
+          <option value="Tertiary">Tertiary</option>
+        </select>
+
+        <button type="submit" class="btn mt-24">Submit Volunteer Application</button>
+      </form>
+    </div>
+</body>
+</html>

@@ -1,61 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Advocacy & Awareness — Hope of Tomorrow</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Hope of Tomorrow</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      max-width: 450px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      background: #0078ff;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #005fcc;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <p>Hope of Tomorrow is committed to raising awareness and advocating for the rights, needs, and well-being of youths, refugees, and vulnerable communities. Through community campaigns, workshops, and outreach programs, we educate individuals on their rights, social responsibilities, and access to essential services. Our advocacy efforts focus on promoting inclusion, equality, and protection while empowering community members to voice their concerns and participate in decision-making processes. By fostering awareness and driving positive change, we help build informed, resilient, and engaged communities that can actively contribute to sustainable development and social justice.</p>
-    <img src="/image/advocacy.jpg" alt="Advocacy and Awareness" height="400" width="600" style="display: block; margin: auto;">
-    <p><br>Increased awareness of rights, responsibilities, and available services</p>
-    <p>Empowerment to voice concerns and participate in community decision-making</p>
-    <p>Promotion of inclusion, equality, and social justice within communities</p>
-    <p>Stronger community networks and support systems for vulnerable groups</p>
-    <p>Improved access to essential resources and services</p>
-    <p>Enhanced resilience and capacity to address social challenges</p>
-    <p>Development of leadership and advocacy skills among community members</p>
-    
-<a href="/Education-Services.html"><button>Access Education Services</button></a>
-    <a href="/Protection-Services.html"><button>Access Protection Services</button></a>
-    <a href="/Livelihood-Services.html"><button>Access Livelihood Services</button></a>
-    <a href="/Community-Services.html"><button>Access Community Services</button></a>
-    <a href="/Advocacy-and-Awareness.html"><button>Access Advocacy and Awareness Services</button></a>
-    <a href="/MHPSS-Services.html"><button>Access MHPSS Services</button></a>
-  </a>
-</section>
+  <header class="header">
+    <div class="container inner">
+      <div class="logo"><a href="Home-Page.html"><img src="image/HoT.png" alt="Hope of Tomorrow logo"></a><span class="site-title">Hope of Tomorrow</span></div>
+      <nav class="primary">
+        <a href="Home-Page.html">Home</a>
+        <a href="services-we-offer.html">Services</a>
+        <a href="Donate.html">Donate</a>
+        <a href="sign-in-sign-up.html">Account</a>
+        <a href="volunteer-with-us.html">Volunteer</a>
+      </nav>
+    </div>
+  </header>
+
+<div class="container">
+  <h2>Contact Us</h2>
+  <p>You can reach us through the options below:</p>
+
+  <!-- Contact by Email -->
+  <button onclick="sendEmail()">Send Email</button>
+
+  <!-- Contact by Phone -->
+  <button onclick="showPhone()">Call Us</button>
+  <p id="phoneNumber" class="hidden"></p>
+</div>
+
+<script>
+  // Hidden contact details
+  const hiddenEmail = "danielirenge@outlook.com";
+  const hiddenPhone = "+256771421290";
+
+  // Email sender
+  function sendEmail() {
+    // Opens the user's email app but email stays hidden in code, not displayed on page
+    window.location.href = `mailto:${hiddenEmail}`;
+  }
+
+  // Show phone number only when user chooses to call
+  function showPhone() {
+    const phoneField = document.getElementById("phoneNumber");
+    phoneField.innerHTML = `<a href='tel:${hiddenPhone}'>${hiddenPhone}</a>`;
+    phoneField.classList.remove("hidden");
+  } 
+</script>
 
 <a href="/Home-Page.html"><button>Home</button></a>
-<a href="/Services we offer.html"><button>Services</button></a>
+<a href="/services-we-offer.html"><button>Services</button></a>
 <a href="/Donate.html"><button>Donate</button></a>
-<a href="/Sign In-Sign Up.html"><button>Sign In / Sign Up</button></a>
+<a href="/sign-in-sign-up.html"><button>Sign In / Sign Up</button></a>
 <a href="/Jobs.html"><button>Jobs</button></a>
-<a href="/Volunteer with-Us.html"><button>Volunteer with Us</button></a>
+<a href="/volunteer-with-us.html"><button>Volunteer with Us</button></a>
 <a href="/Our-Partners.html"><button>Our Partners</button></a>
 <a href="/Posting-System.html"><button>Posting System</button></a>
 <a href="/Our-Staffs.html"><button>Our Staffs</button></a>
    <a href="/About-Us.html"><button>About-Us</button></a>
-   <a href="/Get in Touch with Us.html"><button>Get in Touch with Us</button></a>
-   <a href="/contact us.html"><button>Contact Us</button></a>
+   <a href="/get-in-touch-with-us.html"><button>Get in Touch with Us</button></a>
+   <a href="/contact-us.html"><button>Contact Us</button></a>
    <a href="/Subscribe.html"><button>Subscribe</button></a>
 
-<!-- Subscribe Section -->
-<section id="subscribe" style="background: #0d3b66; padding: 60px 20px; text-align: center; color: #fff;">
-  <h2 style="font-size: 36px; margin-bottom: 20px;">Subscribe with Us</h2>
-  <p style="font-size: 18px; max-width: 700px; margin: 0 auto 30px;">
-    Stay updated with the latest news, programs, and events from Hope of Tomorrow. Enter your email below to subscribe to our newsletter.
-  </p>
-
-  <form action="#" method="post" style="max-width: 400px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-    <input type="email" name="email" placeholder="Enter your email" required
-           style="padding: 12px; border-radius: 5px; border: none; flex: 1; min-width: 200px;">
-    <button type="submit" style="padding: 12px 25px; background-color: #ffd700; color: #0d3b66; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
-      Subscribe
-    </button>
-  </form>
-</section>
 
 
 <!-- ================= FOOTER ================= -->
@@ -84,11 +123,11 @@
       <h3>Quick Links</h3>
       <ul>
         <li><a href="/Home-Page.html">Home</a></li>
-        <li><a href="/Services we offer.html">Services</a></li>
+        <li><a href="/services-we-offer.html">Services</a></li>
         <li><a href="/Donate.html">Donate</a></li>
-        <li><a href="/Sign In-Sign Up.html">Sign In / Sign Up</a></li>
+        <li><a href="/sign-in-sign-up.html">Sign In / Sign Up</a></li>
         <li><a href="/Jobs.html">Jobs</a></li>
-        <li><a href="/Volunteer with-Us.html">Volunteer with Us</a></li>
+        <li><a href="/volunteer-with-us.html">Volunteer with Us</a></li>
       </ul>
     </div>
 
@@ -96,7 +135,7 @@
     <div class="footer-column">
       <h3>Legal & Support</h3>
       <ul>
-       <li><a href="/privacy.html">Privacy Policy</a></li>
+      <li><a href="/privacy.html">Privacy Policy</a></li>
         <li><a href="#">Security</a></li>
         <li><a href="#">Terms & Conditions</a></li>
         <li><a href="#">Disclaimer</a></li>
@@ -207,6 +246,8 @@
 // Auto-update year
 document.getElementById("year").innerText = new Date().getFullYear();
 </script>
+
+
 
 
 </body>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get in Touch — Hope of Tomorrow</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+</head>
+<body>
+    
+<section id="getInTouch" style="padding:50px; background:#f5f5f5; font-family:Arial, sans-serif;">
+  <div style="max-width:800px; margin:0 auto; background:white; padding:40px; border-radius:15px; box-shadow:0 0 15px rgba(0,0,0,0.1);">
+    <h2 style="text-align:center; font-size:36px; margin-bottom:30px; color:#1677ff;">Get in Touch with Us</h2>
+
+    <!-- Visitor Info Form -->
+    <div id="visitorForm">
+      <h3>Before Chatting, Tell Us About Yourself</h3>
+      <input type="text" id="visitorName" placeholder="Your Name" style="width:100%; padding:10px; margin:8px 0;">
+      <input type="email" id="visitorEmail" placeholder="Your Email" style="width:100%; padding:10px; margin:8px 0;">
+      <input type="text" id="visitorLocation" placeholder="Your Location" style="width:100%; padding:10px; margin:8px 0;">
+
+      <label for="topicSelect" style="font-weight:bold; margin-top:10px; display:block;">Select the topic you want to discuss:</label>
+      <select id="topicSelect" style="width:100%; padding:10px; margin-bottom:20px;">
+        <option value="">--Choose a Topic--</option>
+        <option value="hopeOfTomorrow">Hope of Tomorrow</option>
+        <option value="danielStory">Daniel Irenge Bashimbe Story</option>
+        <option value="volunteering">Volunteering Opportunities</option>
+        <option value="donations">Donations & Support</option>
+        <option value="programs">Our Programs & Sectors</option>
+      </select>
+
+      <button onclick="startChat()" style="padding:12px 20px; background:#1677ff; color:white; border:none; border-radius:6px; cursor:pointer;">Start Chat</button>
+    </div>
+
+    <!-- Chat Interface -->
+    <div id="chatContainer" style="display:none; margin-top:30px;">
+      <div id="chatBox" style="height:400px; overflow-y:auto; border:1px solid #ccc; padding:15px; border-radius:10px; background:#f9f9f9;"></div>
+      <input type="text" id="userMessage" placeholder="Type your message..." style="width:80%; padding:10px; margin-top:10px;">
+      <button onclick="sendMessage()" style="padding:10px 15px; margin-left:10px; background:#28a745; color:white; border:none; border-radius:6px; cursor:pointer;">Send</button>
+    </div>
+  </div>
+</section>
+
+<script>
+// Visitor info and topic
+let visitor = {};
+let selectedTopic = "";
+
+// Predefined AI-like responses
+const responses = {
+  hopeOfTomorrow: [
+    "Hope of Tomorrow is a community-based organization focused on youth empowerment, education, and livelihood support.",
+    "We prioritize helping vulnerable groups including children, youths, people with disabilities, and young girls.",
+    "Donors and supporters contribute directly to impactful programs that change lives."
+  ],
+  danielStory: [
+    "Daniel Irenge Bashimbe, the founder of Hope of Tomorrow, was born in Bukavu, DRC, from the Mushi tribe.",
+    "Despite being a refugee, Daniel pursued education and earned a diploma in Social Work.",
