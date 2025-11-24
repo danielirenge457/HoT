@@ -4,29 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <h1> <img src="/image/HoT.png" alt="Hope of Tomorrow Logo" height="200" width="300" style="display: block; margin: auto;">
-    <h4>Advocacy and Awareness</h4>
+
+<h3> <img src="/image/HoT.png" alt="Hope of Tomorrow Logo" height="150" width="150" style="display: block; margin: auto;" align="left">
 
 </head>
 <body>
-    <p>Hope of Tomorrow is committed to raising awareness and advocating for the rights, needs, and well-being of youths, refugees, and vulnerable communities. Through community campaigns, workshops, and outreach programs, we educate individuals on their rights, social responsibilities, and access to essential services. Our advocacy efforts focus on promoting inclusion, equality, and protection while empowering community members to voice their concerns and participate in decision-making processes. By fostering awareness and driving positive change, we help build informed, resilient, and engaged communities that can actively contribute to sustainable development and social justice.</p>
-    <img src="/image/advocacy.jpg" alt="Advocacy and Awareness" height="400" width="600" style="display: block; margin: auto;">
-    <p><br>Increased awareness of rights, responsibilities, and available services</p>
-    <p>Empowerment to voice concerns and participate in community decision-making</p>
-    <p>Promotion of inclusion, equality, and social justice within communities</p>
-    <p>Stronger community networks and support systems for vulnerable groups</p>
-    <p>Improved access to essential resources and services</p>
-    <p>Enhanced resilience and capacity to address social challenges</p>
-    <p>Development of leadership and advocacy skills among community members</p>
-    
-<a href="/Education-Services.html"><button>Access Education Services</button></a>
-    <a href="/Protection-Services.html"><button>Access Protection Services</button></a>
-    <a href="/Livelihood-Services.html"><button>Access Livelihood Services</button></a>
-    <a href="/Community-Services.html"><button>Access Community Services</button></a>
-    <a href="/Advocacy-and-Awareness.html"><button>Access Advocacy and Awareness Services</button></a>
-    <a href="/MHPSS-Services.html"><button>Access MHPSS Services</button></a>
-  </a>
+<section id="dashboard" style="display:flex; min-height:80vh; padding:20px; gap:20px;">
+
+  <!-- Left Column: Main Content -->
+  <div id="mainContent" style="flex:3; background:#f5f5f5; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+    <h2>Main Content</h2>
+    <p>Here will be the feed, posts, announcements, or other sections for the user after signing in.</p>
+    <!-- Add your posts, activities, or other content here -->
+  </div>
+
+  <!-- Right Column: User Profile Panel -->
+  <div id="profilePanel" style="flex:1; background:white; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+    <h3 style="text-align:center; margin-bottom:20px;">My Profile</h3>
+    <form id="profileForm">
+      <input type="text" id="profileName" placeholder="Full Name" style="width:100%; padding:8px; margin:8px 0;">
+      <input type="email" id="profileEmail" placeholder="Email" style="width:100%; padding:8px; margin:8px 0;">
+      <input type="tel" id="profilePhone" placeholder="Phone" style="width:100%; padding:8px; margin:8px 0;">
+      <input type="text" id="profileCity" placeholder="City" style="width:100%; padding:8px; margin:8px 0;">
+      <input type="text" id="profileCountry" placeholder="Country" style="width:100%; padding:8px; margin:8px 0;">
+      <input type="text" id="profileBio" placeholder="Bio" stile="width:100%; padding:8px; margin:8px 0;">
+
+      <select id="profileEducation" style="width:100%; padding:8px; margin:8px 0;">
+        <option value="">Education Level</option>
+        <option value="Primary">Primary</option>
+        <option value="Secondary">Secondary</option>
+        <option value="High School">High School</option>
+        <option value="Diploma">Diploma</option>
+        <option value="Bachelor">Bachelor</option>
+        <option value="Master">Master</option>
+        <option value="PhD">PhD</option>
+      </select>
+      <textarea id="profileExperience" placeholder="Experiences" rows="3" style="width:100%; padding:8px; margin:8px 0;"></textarea>
+      <textarea id="profileBio" placeholder="Bio" rows="3" style="width:100%; padding:8px; margin:8px 0;"></textarea>
+      <button type="submit" style="width:100%; padding:10px; margin-top:10px; background:#1677ff; color:white; border:none; border-radius:6px; cursor:pointer;">Save Profile</button>
+    </form>
+  </div>
+
 </section>
+
+<script>
+// Helper
+const getEl = id => document.getElementById(id);
+
+// Load profile
+function loadProfile() {
+  const profile = JSON.parse(localStorage.getItem('hopeUserProfile') || '{}');
+  if(!profile) return;
+  getEl('profileName').value = profile.name || '';
+  getEl('profileEmail').value = profile.email || '';
+  getEl('profilePhone').value = profile.phone || '';
+  getEl('profileCity').value = profile.city || '';
+  getEl('profileCountry').value = profile.country || '';
+  getEl('profileEducation').value = profile.education || '';
+  getEl('profileExperience').value = profile.experience || '';
+  getEl('profileBio').value = profile.bio || '';
+}
+
+// Save profile
+getEl('profileForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const profile = {
+    name: getEl('profileName').value,
+    email: getEl('profileEmail').value,
+    phone: getEl('profilePhone').value,
+    city: getEl('profileCity').value,
+    country: getEl('profileCountry').value,
+    education: getEl('profileEducation').value,
+    experience: getEl('profileExperience').value,
+    bio: getEl('profileBio').value
+  };
+  localStorage.setItem('hopeUserProfile', JSON.stringify(profile));
+  alert('Profile saved successfully!');
+});
+
+// Load profile on page load
+loadProfile();
+</script>
+
 
 <a href="/Home-Page.html"><button>Home</button></a>
 <a href="/Services we offer.html"><button>Services</button></a>
@@ -42,23 +101,6 @@
    <a href="/contact us.html"><button>Contact Us</button></a>
    <a href="/Subscribe.html"><button>Subscribe</button></a>
 
-<!-- Subscribe Section -->
-<section id="subscribe" style="background: #0d3b66; padding: 60px 20px; text-align: center; color: #fff;">
-  <h2 style="font-size: 36px; margin-bottom: 20px;">Subscribe with Us</h2>
-  <p style="font-size: 18px; max-width: 700px; margin: 0 auto 30px;">
-    Stay updated with the latest news, programs, and events from Hope of Tomorrow. Enter your email below to subscribe to our newsletter.
-  </p>
-
-  <form action="#" method="post" style="max-width: 400px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-    <input type="email" name="email" placeholder="Enter your email" required
-           style="padding: 12px; border-radius: 5px; border: none; flex: 1; min-width: 200px;">
-    <button type="submit" style="padding: 12px 25px; background-color: #ffd700; color: #0d3b66; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
-      Subscribe
-    </button>
-  </form>
-</section>
-
-
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   
@@ -69,7 +111,8 @@
     <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/174/174857.png" alt="Instagram"></a>
     <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/174/174879.png" alt="LinkedIn"></a>
     <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/1384/1384060.png" alt="YouTube"></a>
-     <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/3046/3046123.png" alt="TikTok"></a> </div>
+        <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/3046/3046123.png" alt="TikTok"></a>
+  </div>
 
   <!-- Footer Columns -->
   <div class="footer-columns">
@@ -208,6 +251,7 @@
 // Auto-update year
 document.getElementById("year").innerText = new Date().getFullYear();
 </script>
+
 
 
 </body>
