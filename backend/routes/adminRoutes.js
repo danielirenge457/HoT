@@ -23,11 +23,12 @@ router.post('/login', async (req, res) => {
     
     const admin = result.rows[0];
     
-    // Verify password (for now, we'll use a simple check)
-    // In production, compare hashed passwords
-    if (password !== 'admin123') { // Default password - CHANGE THIS
-      return res.status(401).json({ error: 'Invalid credentials' });
+    // Verify password using bcrypt
+    if (!admin.password_hash) {
+      return res.status(401).json({ error: 'Login not available for this admin (no password set)' });
     }
+    const ok = await bcrypt.compare(password, admin.password_hash);
+    if (!ok) return res.status(401).json({ error: 'Invalid credentials' });
     
     // Generate JWT token
     const token = jwt.sign(
@@ -39,6 +40,31 @@ router.post('/login', async (req, res) => {
     res.json({ success: true, token, admin: { id: admin.id, name: admin.name, email: admin.email } });
   } catch (error) {
     res.status(500).json({ error: error.message });
+  }
+});
+
+// Create admin user via API (one-time). Protect by ADMIN_CREATE_SECRET env var.
+router.post('/create', async (req, res) => {
+  try {
+    const secret = req.headers['x-admin-secret'] || req.body.secret;
+    if (!process.env.ADMIN_CREATE_SECRET || secret !== process.env.ADMIN_CREATE_SECRET) {
+      return res.status(403).json({ error: 'Forbidden' });
+    }
+
+    const { name, email, password } = req.body;
+    if (!email || !password) return res.status(400).json({ error: 'email and password required' });
+
+    const hash = await bcrypt.hash(password, 10);
+    const result = await pool.query(
+      `INSERT INTO users (name, email, password_hash, role) \
+       VALUES ($1, $2, $3, 'admin') \
+       ON CONFLICT (email) DO UPDATE SET name = EXCLUDED.name, password_hash = EXCLUDED.password_hash, role='admin' RETURNING *`,
+      [name || 'Administrator', email, hash]
+    );
+
+    res.json({ success: true, admin: result.rows[0] });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 });
 
