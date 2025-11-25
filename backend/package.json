@@ -1,0 +1,25 @@
+{
+  "name": "hope-of-tomorrow-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Hope of Tomorrow NGO platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["ngo", "api", "express", "postgresql"],
+  "author": "Daniel Irenge",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.10.0",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
