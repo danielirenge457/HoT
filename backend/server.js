@@ -9,6 +9,7 @@ const donationRoutes = require('./routes/donationRoutes');
 const jobApplicationRoutes = require('./routes/jobApplicationRoutes');
 const volunteerRoutes = require('./routes/volunteerRoutes');
 const jobPostingRoutes = require('./routes/jobPostingRoutes');
+const { router: adminRoutes } = require('./routes/adminRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -27,6 +28,7 @@ app.use('/api/donations', donationRoutes);
 app.use('/api/job-applications', jobApplicationRoutes);
 app.use('/api/volunteers', volunteerRoutes);
 app.use('/api/jobs', jobPostingRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
