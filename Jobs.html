@@ -10,30 +10,30 @@
 
 </head>
 <body>
-    <section id="jobOpenings" style="padding:50px; background:#f9f9f9;">
-  <h2 style="text-align:center; font-size:32px; margin-bottom:20px;">Current Job Openings</h2>
-  <p style="text-align:center; font-size:18px; max-width:800px; margin:0 auto 40px; color:#333;">
+    <section id="jobOpenings" class="content-section">
+  <h2 class="page-title">Current Job Openings</h2>
+  <p class="lead muted">
     Browse our current opportunities and apply to join Hope of Tomorrow. You can submit your application online or send your CV and supporting documents directly to our HR team.
   </p>
 
   <!-- Job Posting Form for Organization (Admin only) -->
-  <div style="max-width:800px; margin:0 auto 50px; background:white; padding:30px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
-    <h3 style="margin-bottom:20px;">Post a New Position</h3>
+  <div class="card card-lg">
+    <h3 class="label-bold">Post a New Position</h3>
     <form id="jobForm">
-      <input type="text" id="jobTitle" placeholder="Position Title" required style="width:100%; padding:10px; margin:10px 0;">
-      <input type="text" id="jobDepartment" placeholder="Department/Section" required style="width:100%; padding:10px; margin:10px 0;">
-      <input type="date" id="openingDate" placeholder="Opening Date" required style="width:100%; padding:10px; margin:10px 0;">
-      <input type="date" id="deadlineDate" placeholder="Deadline Date" required style="width:100%; padding:10px; margin:10px 0;">
-      <textarea id="jobDescription" placeholder="About the Position" rows="4" required style="width:100%; padding:10px; margin:10px 0;"></textarea>
-      <textarea id="jobRoles" placeholder="Roles & Responsibilities" rows="4" required style="width:100%; padding:10px; margin:10px 0;"></textarea>
-      <textarea id="jobQualifications" placeholder="Qualifications & Skills" rows="3" required style="width:100%; padding:10px; margin:10px 0;"></textarea>
-      <input type="email" id="hrEmail" placeholder="HR Email for CV submission" required style="width:100%; padding:10px; margin:10px 0;">
-      <button type="submit" style="padding:12px 20px; background:#1677ff; color:white; border:none; border-radius:6px; cursor:pointer; width:100%;">Post Position</button>
+      <input type="text" id="jobTitle" placeholder="Position Title" required class="input-full">
+      <input type="text" id="jobDepartment" placeholder="Department/Section" required class="input-full">
+      <input type="date" id="openingDate" placeholder="Opening Date" required class="input-full">
+      <input type="date" id="deadlineDate" placeholder="Deadline Date" required class="input-full">
+      <textarea id="jobDescription" placeholder="About the Position" rows="4" required class="input-full"></textarea>
+      <textarea id="jobRoles" placeholder="Roles & Responsibilities" rows="4" required class="input-full"></textarea>
+      <textarea id="jobQualifications" placeholder="Qualifications & Skills" rows="3" required class="input-full"></textarea>
+      <input type="email" id="hrEmail" placeholder="HR Email for CV submission" required class="input-full">
+      <button type="submit" class="btn btn-primary btn-block">Post Position</button>
     </form>
   </div>
 
   <!-- Display Job Openings -->
-  <div id="jobListings" style="max-width:800px; margin:0 auto;"></div>
+  <div id="jobListings" class="card card-lg"></div>
 </section>
 
 <script>
@@ -47,20 +47,20 @@ function loadJobs() {
   jobListings.innerHTML = '';
 
   if(jobs.length === 0) {
-    jobListings.innerHTML = '<p style="text-align:center; color:#555;">No current openings.</p>';
+    jobListings.innerHTML = '<p class="muted text-center">No current openings.</p>';
     return;
   }
 
   jobs.forEach((job, index) => {
     jobListings.innerHTML += `
-      <div style="background:white; padding:20px; border-radius:10px; margin-bottom:20px; box-shadow:0 0 8px rgba(0,0,0,0.1);">
-        <h3 style="margin-bottom:10px;">${job.title} - ${job.department}</h3>
+      <div class="card">
+        <h3 class="label-bold">${job.title} - ${job.department}</h3>
         <p><strong>Opening Date:</strong> ${job.openingDate} | <strong>Deadline:</strong> ${job.deadlineDate}</p>
         <p><strong>About the Position:</strong> ${job.description}</p>
         <p><strong>Roles & Responsibilities:</strong> ${job.roles}</p>
         <p><strong>Qualifications & Skills:</strong> ${job.qualifications}</p>
-        <a href="mailto:${job.hrEmail}?subject=Application for ${job.title}" style="display:inline-block; margin-top:10px; padding:10px 15px; background:#1677ff; color:white; border-radius:5px; text-decoration:none;">Apply via Email</a>
-        <button onclick="applyOnline(${index})" style="display:inline-block; margin-top:10px; margin-left:10px; padding:10px 15px; background:#28a745; color:white; border:none; border-radius:5px; cursor:pointer;">Apply Online</button>
+        <a href="mailto:${job.hrEmail}?subject=Application for ${job.title}" class="btn btn-primary">Apply via Email</a>
+        <button onclick="applyOnline(${index})" class="btn btn-primary">Apply Online</button>
       </div>
     `;
   });

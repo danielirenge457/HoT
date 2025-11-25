@@ -5,36 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us — Hope of Tomorrow</title>
   <link rel="stylesheet" href="assets/css/styles.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
-    }
-    .container {
-      max-width: 450px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    button {
-      padding: 10px 15px;
-      border: none;
-      background: #0078ff;
-      color: #fff;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    button:hover {
-      background: #005fcc;
-    }
-    .hidden {
-      display: none;
-    }
-  </style>
 </head>
 <body>
   <header class="header">
@@ -50,17 +20,19 @@
     </div>
   </header>
 
-<div class="container">
-  <h2>Contact Us</h2>
-  <p>You can reach us through the options below:</p>
+<main class="container">
+  <div class="narrow card">
+    <h2>Contact Us</h2>
+    <p>You can reach us through the options below:</p>
 
-  <!-- Contact by Email -->
-  <button onclick="sendEmail()">Send Email</button>
+    <!-- Contact by Email -->
+    <button class="btn-primary" type="button" onclick="sendEmail()">Send Email</button>
 
-  <!-- Contact by Phone -->
-  <button onclick="showPhone()">Call Us</button>
-  <p id="phoneNumber" class="hidden"></p>
-</div>
+    <!-- Contact by Phone -->
+    <button class="btn-primary" type="button" onclick="showPhone()">Call Us</button>
+    <p id="phoneNumber" class="hidden"></p>
+  </div>
+</main>
 
 <script>
   // Hidden contact details
@@ -81,19 +53,19 @@
   } 
 </script>
 
-<a href="/Home-Page.html"><button>Home</button></a>
-<a href="/Services we offer.html"><button>Services</button></a>
-<a href="/Donate.html"><button>Donate</button></a>
-<a href="/Sign In-Sign Up.html"><button>Sign In / Sign Up</button></a>
-<a href="/Jobs.html"><button>Jobs</button></a>
-<a href="/Volunteer with-Us.html"><button>Volunteer with Us</button></a>
-<a href="/Our-Partners.html"><button>Our Partners</button></a>
-<a href="/Posting-System.html"><button>Posting System</button></a>
-<a href="/Our-Staffs.html"><button>Our Staffs</button></a>
-   <a href="/About-Us.html"><button>About-Us</button></a>
-   <a href="/Get in Touch with Us.html"><button>Get in Touch with Us</button></a>
-   <a href="/contact us.html"><button>Contact Us</button></a>
-   <a href="/Subscribe.html"><button>Subscribe</button></a>
+<a href="/Home-Page.html" class="btn btn-secondary">Home</a>
+<a href="/Services we offer.html" class="btn btn-secondary">Services</a>
+<a href="/Donate.html" class="btn btn-secondary">Donate</a>
+<a href="/Sign In-Sign Up.html" class="btn btn-secondary">Sign In / Sign Up</a>
+<a href="/Jobs.html" class="btn btn-secondary">Jobs</a>
+<a href="/Volunteer with-Us.html" class="btn btn-secondary">Volunteer with Us</a>
+<a href="/Our-Partners.html" class="btn btn-secondary">Our Partners</a>
+<a href="/Posting-System.html" class="btn btn-secondary">Posting System</a>
+<a href="/Our-Staffs.html" class="btn btn-secondary">Our Staffs</a>
+<a href="/About-Us.html" class="btn btn-secondary">About-Us</a>
+<a href="/Get in Touch with Us.html" class="btn btn-secondary">Get in Touch with Us</a>
+<a href="/contact us.html" class="btn btn-secondary">Contact Us</a>
+<a href="/Subscribe.html" class="btn btn-secondary">Subscribe</a>
 
 
 <!-- ================= FOOTER ================= -->

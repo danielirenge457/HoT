@@ -7,41 +7,41 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-<section id="benefiSys" style="padding:50px; background:#f5f5f5;">
-  <h2 style="text-align:center; font-size:32px; margin-bottom:20px;">BenefiSys - Beneficiary Management System</h2>
+<section id="benefiSys" class="content-section">
+  <h2 class="text-center">BenefiSys - Beneficiary Management System</h2>
 
   <!-- Staff login -->
-  <div id="staffLogin" style="max-width:500px; margin:0 auto 30px; background:white; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
+  <div id="staffLogin" class="form-card narrow">
     <h3>Staff Login</h3>
-    <input type="text" id="staffName" placeholder="Your Name" style="width:100%; padding:10px; margin:8px 0;">
-    <input type="text" id="staffID" placeholder="Working ID" style="width:100%; padding:10px; margin:8px 0;">
-    <button onclick="staffLogin()" style="padding:10px 15px; background:#1677ff; color:white; border:none; border-radius:6px; cursor:pointer;">Login</button>
+    <input class="input-full" type="text" id="staffName" placeholder="Your Name">
+    <input class="input-full" type="text" id="staffID" placeholder="Working ID">
+    <button class="btn-primary" onclick="staffLogin()">Login</button>
   </div>
 
-<a href="/Home-Page.html"><button>Home</button></a>
-<a href="/services-we-offer.html"><button>Services</button></a>
-<a href="/Donate.html"><button>Donate</button></a>
-<a href="/sign-in-sign-up.html"><button>Sign In / Sign Up</button></a>
-<a href="/Jobs.html"><button>Jobs</button></a>
-<a href="/volunteer-with-us.html"><button>Volunteer with Us</button></a>
-<a href="/Our-Partners.html"><button>Our Partners</button></a>
-<a href="/Posting-System.html"><button>Posting System</button></a>
-<a href="/Our-Staffs.html"><button>Our Staffs</button></a>
-   <a href="/About-Us.html"><button>About-Us</button></a>
-  <a href="/get-in-touch-with-us.html"><button>Get in Touch with Us</button></a>
-  <a href="/contact-us.html"><button>Contact Us</button></a>
-   <a href="/Subscribe.html"><button>Subscribe</button></a>
+<a href="/Home-Page.html" class="btn btn-secondary">Home</a>
+<a href="/services-we-offer.html" class="btn btn-secondary">Services</a>
+<a href="/Donate.html" class="btn btn-secondary">Donate</a>
+<a href="/sign-in-sign-up.html" class="btn btn-secondary">Sign In / Sign Up</a>
+<a href="/Jobs.html" class="btn btn-secondary">Jobs</a>
+<a href="/volunteer-with-us.html" class="btn btn-secondary">Volunteer with Us</a>
+<a href="/Our-Partners.html" class="btn btn-secondary">Our Partners</a>
+<a href="/Posting-System.html" class="btn btn-secondary">Posting System</a>
+<a href="/Our-Staffs.html" class="btn btn-secondary">Our Staffs</a>
+  <a href="/About-Us.html" class="btn btn-secondary">About-Us</a>
+  <a href="/get-in-touch-with-us.html" class="btn btn-secondary">Get in Touch with Us</a>
+  <a href="/contact-us.html" class="btn btn-secondary">Contact Us</a>
+  <a href="/Subscribe.html" class="btn btn-secondary">Subscribe</a>
 
 
   <!-- Staff main panel -->
-  <div id="staffPanel" style="display:none;">
-    <div style="max-width:800px; margin:0 auto 20px; display:flex; justify-content:space-between; align-items:center;">
+  <div id="staffPanel" class="hidden">
+    <div class="panel-header">
       <h3>Beneficiaries</h3>
-      <button onclick="addBeneficiary()" style="padding:8px 12px; background:#28a745; color:white; border:none; border-radius:5px; cursor:pointer;">+ Add Beneficiary</button>
+      <button class="btn btn-primary" onclick="addBeneficiary()">+ Add Beneficiary</button>
     </div>
 
     <!-- Search -->
-    <input type="text" id="searchBeneficiary" placeholder="Search by Name or ID" style="width:100%; padding:10px; margin-bottom:20px;" onkeyup="searchBeneficiary()">
+    <input class="input-full" type="text" id="searchBeneficiary" placeholder="Search by Name or ID" onkeyup="searchBeneficiary()">
 
     <!-- Beneficiary List -->
     <div id="beneficiaryList"></div>
@@ -49,12 +49,12 @@
 </section>
 
 <!-- Modal for Private Info / Manager Approval -->
-<div id="managerModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
-  <div style="background:white; padding:30px; border-radius:10px; max-width:500px; text-align:center;">
+<div id="managerModal" class="modal-overlay">
+  <div class="modal-content">
     <h3>Manager Authorization Required</h3>
     <p id="managerMessage"></p>
-    <button onclick="grantAccess(true)" style="padding:10px 15px; background:#28a745; color:white; border:none; border-radius:5px; cursor:pointer; margin-right:10px;">Yes, Allow</button>
-    <button onclick="grantAccess(false)" style="padding:10px 15px; background:#dc3545; color:white; border:none; border-radius:5px; cursor:pointer;">No</button>
+    <button class="btn btn-primary" onclick="grantAccess(true)">Yes, Allow</button>
+    <button class="btn btn-secondary" onclick="grantAccess(false)">No</button>
   </div>
 </div>
 
@@ -75,15 +75,15 @@ function staffLogin() {
   // Simulate manager approval workflow
   showManagerModal(currentStaff);
 
-  getEl('staffLogin').style.display = 'none';
-  getEl('staffPanel').style.display = 'block';
+  getEl('staffLogin').classList.add('hidden');
+  getEl('staffPanel').classList.remove('hidden');
 
   loadBeneficiaries();
 }
 
 // Manager approval modal simulation
 function showManagerModal(staff) {
-  getEl('managerModal').style.display = 'flex';
+  getEl('managerModal').classList.add('show');
   getEl('managerMessage').innerText = `Staff ${staff.name} (ID: ${staff.id}) is requesting access to BenefiSys. Allow access?`;
 }
 
@@ -96,7 +96,7 @@ function grantAccess(allow) {
     managerAuthorized = false;
     alert('Access denied. You can only view limited beneficiary info.');
   }
-  getEl('managerModal').style.display = 'none';
+  getEl('managerModal').classList.remove('show');
 }
 
 // Beneficiary data array
@@ -134,11 +134,11 @@ function loadBeneficiaries() {
 
   beneficiaries.forEach(b => {
     list.innerHTML += `
-      <div style="background:white; padding:15px; border-radius:10px; margin-bottom:10px; box-shadow:0 0 5px rgba(0,0,0,0.1);">
+      <div class="list-item">
         <strong>${b.fullName}</strong> | Age: ${b.age} | Family Size: ${b.familySize}<br>
         Address: ${b.address} | Phone: ${b.phone}<br>
-        <img src="${b.photo || 'https://via.placeholder.com/100'}" alt="Photo" style="width:80px; height:80px; border-radius:50%; margin-top:5px;"><br>
-        <button onclick="viewPrivateInfo('${b.id}')" style="margin-top:5px; padding:5px 10px; background:#1677ff; color:white; border:none; border-radius:5px; cursor:pointer;">View Private Info</button>
+        <img src="${b.photo || 'https://via.placeholder.com/100'}" alt="Photo" class="avatar"><br>
+        <button class="btn btn-primary mt-6" onclick="viewPrivateInfo('${b.id}')">View Private Info</button>
       </div>
     `;
   });
@@ -161,11 +161,11 @@ function searchBeneficiary() {
 
   filtered.forEach(b => {
     list.innerHTML += `
-      <div style="background:white; padding:15px; border-radius:10px; margin-bottom:10px; box-shadow:0 0 5px rgba(0,0,0,0.1);">
+      <div class="list-item">
         <strong>${b.fullName}</strong> | Age: ${b.age} | Family Size: ${b.familySize}<br>
         Address: ${b.address} | Phone: ${b.phone}<br>
-        <img src="${b.photo || 'https://via.placeholder.com/100'}" alt="Photo" style="width:80px; height:80px; border-radius:50%; margin-top:5px;"><br>
-        <button onclick="viewPrivateInfo('${b.id}')" style="margin-top:5px; padding:5px 10px; background:#1677ff; color:white; border:none; border-radius:5px; cursor:pointer;">View Private Info</button>
+        <img src="${b.photo || 'https://via.placeholder.com/100'}" alt="Photo" class="avatar"><br>
+        <button class="btn btn-primary mt-6" onclick="viewPrivateInfo('${b.id}')">View Private Info</button>
       </div>
     `;
   });

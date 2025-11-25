@@ -59,3 +59,66 @@ nav.primary a:hover{background:rgba(13,59,102,0.06)}
   .footer .footer-columns{flex-direction:column;align-items:center}
   .hero h1{font-size:28px}
 }
+
+/* Site utilities added during cleanup */
+.site-header{text-align:center;padding:20px 0;background:transparent}
+.content-section{padding:50px;background:#f5f5f5;text-align:center}
+.hero-section{background:#f2f7ff;padding:80px 20px;text-align:center}
+.hero-section img{display:block;margin:0 auto;max-width:100%;height:auto;border-radius:8px}
+.lead{font-size:18px;color:var(--muted);max-width:700px;margin:0 auto 30px}
+.hero-title{font-size:48px;color:var(--brand-primary);margin-bottom:20px;font-weight:700}
+.hero-img{max-width:100%;height:auto;border-radius:8px;display:block;margin:0 auto}
+
+.content-section h2{font-size:36px;color:#1a1a1a;margin-bottom:20px}
+.content-section p{font-size:18px;max-width:800px;margin:0 auto;line-height:1.8;color:#333}
+.right-nav{position:fixed;top:120px;right:20px;z-index:999}
+#pageSelector{padding:10px;font-size:16px;border:2px solid #0066cc;border-radius:8px;background:#fff;cursor:pointer}
+#pageSelector:hover{border-color:#004999}
+.form-card{max-width:800px;margin:0 auto;background:white;padding:30px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.06)}
+.input-full{width:100%;padding:10px;margin:10px 0;border-radius:5px;border:1px solid #ccc}
+.btn-primary{background:var(--brand-primary);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;display:inline-block}
+.btn-cta{background:var(--brand-accent);color:var(--brand-primary);padding:12px 18px;border-radius:8px;font-weight:600}
+.partners-grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.partner-card{background:var(--card);padding:20px;border-radius:12px;min-width:200px;max-width:260px;box-shadow:0 6px 18px rgba(13,59,102,0.04);text-align:center}
+.subscribe-card{max-width:600px;margin:0 auto;background:white;padding:40px;border-radius:15px;box-shadow:0 0 15px rgba(0,0,0,0.06)}
+
+/* Partner grid alias and image rules */
+.partners-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;padding:20px}
+.partner-card img{width:120px;height:auto;margin-bottom:15px}
+
+/* Chat UI used on contact/get-in-touch pages */
+.chat-box{height:400px;overflow-y:auto;border:1px solid #ccc;padding:15px;border-radius:10px;background:#f9f9f9}
+.chat-input{width:80%;padding:10px;margin-top:10px}
+.chat-send{padding:10px 15px;margin-left:10px;background:#28a745;color:#fff;border:none;border-radius:6px;cursor:pointer}
+
+/* Accent button (used for subscribe CTA) */
+.btn-accent{background:#ffd700;color:var(--brand-primary);padding:12px 18px;border-radius:8px;display:inline-block;font-weight:700}
+
+/* Beneficiary list and modal utilities */
+.list-item{background:white;padding:15px;border-radius:10px;margin-bottom:10px;box-shadow:0 0 5px rgba(0,0,0,0.1)}
+.avatar{width:80px;height:80px;border-radius:50%;margin-top:5px;display:inline-block}
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);justify-content:center;align-items:center}
+.modal-overlay.show{display:flex}
+.modal-content{background:white;padding:30px;border-radius:10px;max-width:500px;text-align:center}
+.form-inline{max-width:400px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+/* spacing between adjacent buttons */
+.btn + .btn{margin-left:10px}
+.pay-details{margin-top:15px;font-weight:700}
+.panel-header{max-width:800px;margin:0 auto 20px;display:flex;justify-content:space-between;align-items:center}
+.mt-6{margin-top:6px}
+.avatar-lg{width:180px;height:180px;border-radius:50%;object-fit:cover;border:3px solid var(--brand-primary);display:inline-block}
+.label-bold{font-weight:700;display:block;margin-top:10px}
+.mt-30{margin-top:30px}
+.muted{color:var(--muted)}
+.btn-block{display:block;width:100%}
+.success{color:green}
+.card-lg{max-width:1000px;margin:0 auto;padding:40px}
+.page-title{font-size:36px;color:#1a1a1a;margin-bottom:30px;text-align:center}
+
+@media(max-width:768px){
+  .partners-grid{flex-direction:column;align-items:center}
+}
+
+/* Utilities for narrow content cards and simple hidden state used by legacy pages */
+.narrow{max-width:450px;margin:20px auto;background:var(--card);padding:20px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.hidden{display:none}

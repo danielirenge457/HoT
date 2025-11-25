@@ -1,182 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Volunteer — Hope of Tomorrow</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="Home-Page.html"><img src="image/HoT.png" alt="Hope of Tomorrow Logo" class="logo"></a>
+        <nav class="site-nav">
+          <a href="Home-Page.html">Home</a>
+          <a href="Services we offer.html">Services</a>
+          <a href="Sign In-Sign Up.html">Sign In / Sign Up</a>
+        </nav>
+      </div>
+    </header>
 
+    <main class="container">
+      <section class="content-section">
+        <h1>Become a Volunteer</h1>
+        <p>Become a part of Hope of Tomorrow and help us empower vulnerable communities. Fill in the form below with your details, experience, and skills to start volunteering.</p>
 
-<h3> <img src="/image/HoT.png" alt="Hope of Tomorrow Logo" height="150" width="150" style="display: block; margin: auto;" align="left">
+        <form id="volunteerForm" class="form-card">
+          <h3>Personal Information</h3>
+          <input class="input-full" type="text" id="fullName" placeholder="Full Name" required>
+          <input class="input-full" type="email" id="email" placeholder="Email Address" required>
+          <input class="input-full" type="tel" id="phone" placeholder="Phone Number" required>
+          <input class="input-full" type="date" id="dob" placeholder="Date of Birth" required>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Volunteer — Hope of Tomorrow</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-    Become a part of Hope of Tomorrow and help us empower vulnerable communities. 
-    Fill in the form below with your details, experience, and skills to start volunteering.
-  </p>
+          <h3>Location</h3>
+          <input class="input-full" type="text" id="address" placeholder="Address" required>
+          <input class="input-full" type="text" id="city" placeholder="City/Town" required>
+          <input class="input-full" type="text" id="country" placeholder="Country" required>
+          <input class="input-full" type="text" id="nationality" placeholder="Nationality" required>
 
-  <form id="volunteerForm" style="max-width:800px; margin:0 auto; background:white; padding:30px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
-    
-    <!-- Personal Information -->
-    <h3 style="margin-bottom:15px; color:#1a1a1a;">Personal Information</h3>
-    <input type="text" id="fullName" placeholder="Full Name" required style="width:100%; padding:10px; margin:10px 0;">
-    <input type="email" id="email" placeholder="Email Address" required style="width:100%; padding:10px; margin:10px 0;">
-    <input type="tel" id="phone" placeholder="Phone Number" required style="width:100%; padding:10px; margin:10px 0;">
-    <input type="text" id="dob" placeholder="Date of Birth" onfocus="(this.type='date')" required style="width:100%; padding:10px; margin:10px 0;">
-    
-    <!-- Location & Nationality -->
-    <h3 style="margin-bottom:15px; color:#1a1a1a;">Location</h3>
-    <input type="text" id="address" placeholder="Address" required style="width:100%; padding:10px; margin:10px 0;">
-    <input type="text" id="city" placeholder="City/Town" required style="width:100%; padding:10px; margin:10px 0;">
-    <input type="text" id="country" placeholder="Country" required style="width:100%; padding:10px; margin:10px 0;">
-    <input type="text" id="nationality" placeholder="Nationality" required style="width:100%; padding:10px; margin:10px 0;">
-    
-    <!-- Education -->
-    <h3 style="margin-bottom:15px; color:#1a1a1a;">Education</h3>
-    <select id="educationLevel" required style="width:100%; padding:10px; margin:10px 0;">
-      <option value="">Select Education Level</option>
-      <option value="Primary">Primary</option>
-      <option value="Secondary">Secondary</option>
-      <option value="High School">High School</option>
-      <option value="Diploma">Diploma</option>
-      <option value="Bachelor">Bachelor</option>
-      <option value="Master">Master</option>
-      <option value="PhD">PhD</option>
-    </select>
-    <input type="text" id="fieldOfStudy" placeholder="Field of Study / Major" style="width:100%; padding:10px; margin:10px 0;">
-    
-    <!-- Work Experience -->
-    <h3 style="margin-bottom:15px; color:#1a1a1a;">Work Experience</h3>
-    <textarea id="workExperience" placeholder="Briefly describe your work or volunteer experience" rows="4" style="width:100%; padding:10px; margin:10px 0;"></textarea>
-    
-    <!-- Skills & Interests -->
-    <h3 style="margin-bottom:15px; color:#1a1a1a;">Skills & Interests</h3>
-    <textarea id="skills" placeholder="List your skills, talents, or areas of interest for volunteering" rows="4" style="width:100%; padding:10px; margin:10px 0;"></textarea>
-    
-    <!-- Availability -->
-    <h3 style="margin-bottom:15px; color:#1a1a1a;">Availability</h3>
-    <input type="text" id="availability" placeholder="Days and times you are available to volunteer" style="width:100%; padding:10px; margin:10px 0;">
-    
-    <!-- Additional Information -->
-    <h3 style="margin-bottom:15px; color:#1a1a1a;">Additional Information</h3>
-    <textarea id="additionalInfo" placeholder="Any other information you want us to know" rows="4" style="width:100%; padding:10px; margin:10px 0;"></textarea>
-    
-    <button type="submit" style="padding:12px 20px; margin-top:20px; background:#1677ff; color:white; border:none; border-radius:6px; cursor:pointer;">Submit Application</button>
-    
-  </form>
-</section>
+          <h3>Education</h3>
+          <select class="input-full" id="educationLevel" required>
+            <option value="">Select Education Level</option>
+            <option value="Primary">Primary</option>
+            <option value="Secondary">Secondary</option>
+            <option value="High School">High School</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Bachelor">Bachelor</option>
+            <option value="Master">Master</option>
+            <option value="PhD">PhD</option>
+          </select>
+          <input class="input-full" type="text" id="fieldOfStudy" placeholder="Field of Study / Major">
 
-<script>
-document.getElementById('volunteerForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  
-  // Collect all information
-  const volunteer = {
-    fullName: document.getElementById('fullName').value,
-    email: document.getElementById('email').value,
-    phone: document.getElementById('phone').value,
-    dob: document.getElementById('dob').value,
-    address: document.getElementById('address').value,
-    city: document.getElementById('city').value,
-    country: document.getElementById('country').value,
-    nationality: document.getElementById('nationality').value,
-    educationLevel: document.getElementById('educationLevel').value,
-    fieldOfStudy: document.getElementById('fieldOfStudy').value,
-    workExperience: document.getElementById('workExperience').value,
-    skills: document.getElementById('skills').value,
-    availability: document.getElementById('availability').value,
-    additionalInfo: document.getElementById('additionalInfo').value
-  };
-  
-  // Save to localStorage (for now, since no backend)
-  let volunteers = JSON.parse(localStorage.getItem('hopeVolunteers') || '[]');
-  volunteers.push(volunteer);
-  localStorage.setItem('hopeVolunteers', JSON.stringify(volunteers));
-  
-  alert('Thank you for registering as a volunteer! We will contact you soon.');
-  document.getElementById('volunteerForm').reset();
-});
+          <h3>Work Experience</h3>
+          <textarea class="input-full" id="workExperience" placeholder="Briefly describe your work or volunteer experience" rows="4"></textarea>
 
+          <h3>Skills & Interests</h3>
+          <textarea class="input-full" id="skills" placeholder="List your skills, talents, or areas of interest for volunteering" rows="4"></textarea>
 
-</script>
+          <h3>Availability</h3>
+          <input class="input-full" type="text" id="availability" placeholder="Days and times you are available to volunteer">
 
+          <h3>Additional Information</h3>
+          <textarea class="input-full" id="additionalInfo" placeholder="Any other information you want us to know" rows="4"></textarea>
 
-<a href="/Home-Page.html"><button>Home</button></a>
-<a href="/Services we offer.html"><button>Services</button></a>
-<a href="/Donate.html"><button>Donate</button></a>
-<a href="/Sign In-Sign Up.html"><button>Sign In / Sign Up</button></a>
-<a href="/Jobs.html"><button>Jobs</button></a>
-<a href="/Volunteer with-Us.html"><button>Volunteer with Us</button></a>
-<a href="/Our-Partners.html"><button>Our Partners</button></a>
-<a href="/Posting-System.html"><button>Posting System</button></a>
-<a href="/Our-Staffs.html"><button>Our Staffs</button></a>
-   <a href="/About-Us.html"><button>About-Us</button></a>
-   <a href="/Get in Touch with Us.html"><button>Get in Touch with Us</button></a>
-   <a href="/contact us.html"><button>Contact Us</button></a>
-   <a href="/Subscribe.html"><button>Subscribe</button></a>
+          <button class="btn-primary" type="submit">Submit Application</button>
+        </form>
+      </section>
+    </main>
 
+    <script>
+    document.getElementById('volunteerForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const volunteer = {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        dob: document.getElementById('dob').value,
+        address: document.getElementById('address').value,
+        city: document.getElementById('city').value,
+        country: document.getElementById('country').value,
+        nationality: document.getElementById('nationality').value,
+        educationLevel: document.getElementById('educationLevel').value,
+        fieldOfStudy: document.getElementById('fieldOfStudy').value,
+        workExperience: document.getElementById('workExperience').value,
+        skills: document.getElementById('skills').value,
+        availability: document.getElementById('availability').value,
+        additionalInfo: document.getElementById('additionalInfo').value
+      };
+      let volunteers = JSON.parse(localStorage.getItem('hopeVolunteers') || '[]');
+      volunteers.push(volunteer);
+      localStorage.setItem('hopeVolunteers', JSON.stringify(volunteers));
+      alert('Thank you for registering as a volunteer! We will contact you soon.');
+      document.getElementById('volunteerForm').reset();
+    });
+    </script>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  
-  <!-- Social Media Row -->
-  <div class="footer-social">
-    <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/174/174848.png" alt="Facebook"></a>
-    <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/174/174855.png" alt="Twitter"></a>
-    <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/174/174857.png" alt="Instagram"></a>
-    <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/174/174879.png" alt="LinkedIn"></a>
-    <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/1384/1384060.png" alt="YouTube"></a>
-    <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/3046/3046123.png" alt="TikTok"></a>
-  </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h3>About Us</h3>
+            <p>Hope of Tomorrow is committed to empowering communities, supporting volunteers, and delivering impactful services for those in need.</p>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="Home-Page.html">Home</a></li>
+              <li><a href="Services we offer.html">Services</a></li>
+              <li><a href="Donate.html">Donate</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <div class="footer-bottom"><p>© <span id="year"></span> Hope of Tomorrow. All Rights Reserved.</p></div>
+      </div>
+    </footer>
 
-  <!-- Footer Columns -->
-  <div class="footer-columns">
-    
-    <!-- Left Column -->
-    <div class="footer-column">
-      <h3>About Us</h3>
-      <p>Hope of Tomorrow is committed to empowering communities, supporting volunteers, and delivering impactful services for those in need.</p>
-    </div>
-
-    <!-- Middle Column -->
-    <div class="footer-column">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="/Home-Page.html">Home</a></li>
-        <li><a href="/Services we offer.html">Services</a></li>
-        <li><a href="/Donate.html">Donate</a></li>
-        <li><a href="/Sign In-Sign Up.html">Sign In / Sign Up</a></li>
-        <li><a href="/Jobs.html">Jobs</a></li>
-        <li><a href="/Volunteer with-Us.html">Volunteer with Us</a></li>
-      </ul>
-    </div>
-
-    <!-- Right Column -->
-    <div class="footer-column">
-      <h3>Legal & Support</h3>
-      <ul>
-       <li><a href="/privacy.html">Privacy Policy</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="#">Terms & Conditions</a></li>
-        <li><a href="#">Disclaimer</a></li>
-        <li><a href="#">Help Center</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <hr>
-  <div class="footer-bottom">
-    <p>© <span id="year"></span> Hope of Tomorrow. All Rights Reserved.</p>
-  </div>
-
-</footer>
-
-<!-- ================= CSS ================= -->
-<script src="assets/js/site.js"></script>
-
-
-</body>
+    <script src="assets/js/site.js"></script>
+  </body>
 </html>

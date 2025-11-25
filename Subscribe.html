@@ -7,26 +7,22 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <h1 style="text-align:center; color:#1677ff;">Subscribe to Hope of Tomorrow</h1>
-<section id="subscribe" style="padding:50px; background:#f0f8ff; font-family:Arial, sans-serif;">
-  <div style="max-width:600px; margin:0 auto; background:white; padding:40px; border-radius:15px; box-shadow:0 0 15px rgba(0,0,0,0.1);">
-    
-    <h2 style="text-align:center; font-size:36px; margin-bottom:30px; color:#1677ff;">Subscribe with Us</h2>
-    
-    <p style="text-align:center; font-size:18px; margin-bottom:20px;">
-      Stay updated with Hope of Tomorrow! Subscribe to receive updates, news, and opportunities directly to your inbox. You can unsubscribe anytime if you wish to opt out.
-    </p>
+    <h1 class="page-title">Subscribe to Hope of Tomorrow</h1>
+  <section id="subscribe" class="hero-section">
+    <div class="subscribe-card">
+      <h2 class="page-title">Subscribe with Us</h2>
+      <p class="lead muted">Stay updated with Hope of Tomorrow! Subscribe to receive updates, news, and opportunities directly to your inbox. You can unsubscribe anytime if you wish to opt out.</p>
 
-    <!-- Subscription Form -->
-    <div id="subscribeForm">
-      <input type="text" id="subscriberName" placeholder="Your Name" style="width:100%; padding:10px; margin:8px 0;">
-      <input type="email" id="subscriberEmail" placeholder="Your Email" style="width:100%; padding:10px; margin:8px 0;">
-      <button onclick="subscribe()" style="padding:12px 20px; background:#1677ff; color:white; border:none; border-radius:6px; cursor:pointer;">Subscribe</button>
+      <!-- Subscription Form -->
+      <div id="subscribeForm">
+        <input type="text" id="subscriberName" placeholder="Your Name" class="input-full">
+        <input type="email" id="subscriberEmail" placeholder="Your Email" class="input-full">
+        <button onclick="subscribe()" class="btn-primary">Subscribe</button>
+      </div>
+
+      <div id="subscriptionMessage" class="mt-30 success"></div>
     </div>
-
-    <div id="subscriptionMessage" style="margin-top:20px; font-size:16px; color:green;"></div>
-  </div>
-</section>
+  </section>
 
 <script>
 // Simulated subscription list

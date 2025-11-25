@@ -1,166 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Profile — Hope of Tomorrow</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="Home-Page.html">
+          <img src="image/HoT.png" alt="Hope of Tomorrow Logo" class="logo">
+        </a>
+        <nav class="site-nav">
+          <a href="Home-Page.html">Home</a>
+          <a href="Services we offer.html">Services</a>
+          <a href="Donate.html">Donate</a>
+          <a href="Sign In-Sign Up.html">Sign In / Sign Up</a>
+          <a href="Jobs.html">Jobs</a>
+        </nav>
+      </div>
+    </header>
 
-<h3> <img src="/image/HoT.png" alt="Hope of Tomorrow Logo" height="150" width="150" style="display: block; margin: auto;" align="left">
+    <main class="container layout">
+      <section id="mainContent" class="content-section">
+        <h2>Welcome back</h2>
+        <p class="lead">This is your dashboard. Here you'll find your posts, announcements, and activity feed.</p>
+        <!-- Add posts, activities, or other user content here -->
+      </section>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile — Hope of Tomorrow</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <div id="mainContent" style="flex:3; background:#f5f5f5; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
-    <h2>Main Content</h2>
-    <p>Here will be the feed, posts, announcements, or other sections for the user after signing in.</p>
-    <!-- Add your posts, activities, or other content here -->
-  </div>
+      <aside id="profilePanel" class="form-card">
+        <h3 class="card-title">My Profile</h3>
+        <form id="profileForm">
+          <input class="input-full" type="text" id="profileName" placeholder="Full Name">
+          <input class="input-full" type="email" id="profileEmail" placeholder="Email">
+          <input class="input-full" type="tel" id="profilePhone" placeholder="Phone">
+          <input class="input-full" type="text" id="profileCity" placeholder="City">
+          <input class="input-full" type="text" id="profileCountry" placeholder="Country">
+          <select class="input-full" id="profileEducation">
+            <option value="">Education Level</option>
+            <option value="Primary">Primary</option>
+            <option value="Secondary">Secondary</option>
+            <option value="High School">High School</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Bachelor">Bachelor</option>
+            <option value="Master">Master</option>
+            <option value="PhD">PhD</option>
+          </select>
+          <textarea class="input-full" id="profileExperience" placeholder="Experiences" rows="3"></textarea>
+          <textarea class="input-full" id="profileBio" placeholder="Bio" rows="3"></textarea>
+          <button class="btn-primary" type="submit">Save Profile</button>
+        </form>
+      </aside>
+    </main>
 
-  <!-- Right Column: User Profile Panel -->
-  <div id="profilePanel" style="flex:1; background:white; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
-    <h3 style="text-align:center; margin-bottom:20px;">My Profile</h3>
-    <form id="profileForm">
-      <input type="text" id="profileName" placeholder="Full Name" style="width:100%; padding:8px; margin:8px 0;">
-      <input type="email" id="profileEmail" placeholder="Email" style="width:100%; padding:8px; margin:8px 0;">
-      <input type="tel" id="profilePhone" placeholder="Phone" style="width:100%; padding:8px; margin:8px 0;">
-      <input type="text" id="profileCity" placeholder="City" style="width:100%; padding:8px; margin:8px 0;">
-      <input type="text" id="profileCountry" placeholder="Country" style="width:100%; padding:8px; margin:8px 0;">
-      <input type="text" id="profileBio" placeholder="Bio" stile="width:100%; padding:8px; margin:8px 0;">
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-social">
+          <a href="#" target="_blank" aria-label="Facebook"><img src="https://cdn-icons-png.flaticon.com/48/174/174848.png" alt="Facebook"></a>
+          <a href="#" target="_blank" aria-label="Twitter"><img src="https://cdn-icons-png.flaticon.com/48/174/174855.png" alt="Twitter"></a>
+          <a href="#" target="_blank" aria-label="Instagram"><img src="https://cdn-icons-png.flaticon.com/48/174/174857.png" alt="Instagram"></a>
+          <a href="#" target="_blank" aria-label="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/48/174/174879.png" alt="LinkedIn"></a>
+        </div>
 
-      <select id="profileEducation" style="width:100%; padding:8px; margin:8px 0;">
-        <option value="">Education Level</option>
-        <option value="Primary">Primary</option>
-        <option value="Secondary">Secondary</option>
-        <option value="High School">High School</option>
-        <option value="Diploma">Diploma</option>
-        <option value="Bachelor">Bachelor</option>
-        <option value="Master">Master</option>
-        <option value="PhD">PhD</option>
-      </select>
-      <textarea id="profileExperience" placeholder="Experiences" rows="3" style="width:100%; padding:8px; margin:8px 0;"></textarea>
-      <textarea id="profileBio" placeholder="Bio" rows="3" style="width:100%; padding:8px; margin:8px 0;"></textarea>
-      <button type="submit" style="width:100%; padding:10px; margin-top:10px; background:#1677ff; color:white; border:none; border-radius:6px; cursor:pointer;">Save Profile</button>
-    </form>
-  </div>
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h3>About Us</h3>
+            <p>Hope of Tomorrow is committed to empowering communities, supporting volunteers, and delivering impactful services for those in need.</p>
+          </div>
 
-</section>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="Home-Page.html">Home</a></li>
+              <li><a href="Services we offer.html">Services</a></li>
+              <li><a href="Donate.html">Donate</a></li>
+              <li><a href="Sign In-Sign Up.html">Sign In / Sign Up</a></li>
+              <li><a href="Jobs.html">Jobs</a></li>
+            </ul>
+          </div>
 
-<script>
-// Helper
-const getEl = id => document.getElementById(id);
+          <div class="footer-column">
+            <h3>Legal & Support</h3>
+            <ul>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+        </div>
 
-// Load profile
-function loadProfile() {
-  const profile = JSON.parse(localStorage.getItem('hopeUserProfile') || '{}');
-  if(!profile) return;
-  getEl('profileName').value = profile.name || '';
-  getEl('profileEmail').value = profile.email || '';
-  getEl('profilePhone').value = profile.phone || '';
-  getEl('profileCity').value = profile.city || '';
-  getEl('profileCountry').value = profile.country || '';
-  getEl('profileEducation').value = profile.education || '';
-  getEl('profileExperience').value = profile.experience || '';
-  getEl('profileBio').value = profile.bio || '';
-}
+        <hr>
+        <div class="footer-bottom">
+          <p>© <span id="year"></span> Hope of Tomorrow. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
 
-// Save profile
-getEl('profileForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const profile = {
-    name: getEl('profileName').value,
-    email: getEl('profileEmail').value,
-    phone: getEl('profilePhone').value,
-    city: getEl('profileCity').value,
-    country: getEl('profileCountry').value,
-    education: getEl('profileEducation').value,
-    experience: getEl('profileExperience').value,
-    bio: getEl('profileBio').value
-  };
-  localStorage.setItem('hopeUserProfile', JSON.stringify(profile));
-  alert('Profile saved successfully!');
-});
+    <script>
+      const getEl = id => document.getElementById(id);
 
-// Load profile on page load
-loadProfile();
-</script>
+      function loadProfile() {
+        const profile = JSON.parse(localStorage.getItem('hopeUserProfile') || '{}');
+        if (!profile) return;
+        getEl('profileName').value = profile.name || '';
+        getEl('profileEmail').value = profile.email || '';
+        getEl('profilePhone').value = profile.phone || '';
+        getEl('profileCity').value = profile.city || '';
+        getEl('profileCountry').value = profile.country || '';
+        getEl('profileEducation').value = profile.education || '';
+        getEl('profileExperience').value = profile.experience || '';
+        getEl('profileBio').value = profile.bio || '';
+      }
 
+      getEl('profileForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const profile = {
+          name: getEl('profileName').value,
+          email: getEl('profileEmail').value,
+          phone: getEl('profilePhone').value,
+          city: getEl('profileCity').value,
+          country: getEl('profileCountry').value,
+          education: getEl('profileEducation').value,
+          experience: getEl('profileExperience').value,
+          bio: getEl('profileBio').value,
+        };
+        localStorage.setItem('hopeUserProfile', JSON.stringify(profile));
+        alert('Profile saved successfully!');
+      });
 
-<a href="/Home-Page.html"><button>Home</button></a>
-<a href="/Services we offer.html"><button>Services</button></a>
-<a href="/Donate.html"><button>Donate</button></a>
-<a href="/Sign In-Sign Up.html"><button>Sign In / Sign Up</button></a>
-<a href="/Jobs.html"><button>Jobs</button></a>
-<a href="/Volunteer with-Us.html"><button>Volunteer with Us</button></a>
-<a href="/Our-Partners.html"><button>Our Partners</button></a>
-<a href="/Posting-System.html"><button>Posting System</button></a>
-<a href="/Our-Staffs.html"><button>Our Staffs</button></a>
-   <a href="/About-Us.html"><button>About-Us</button></a>
-   <a href="/Get in Touch with Us.html"><button>Get in Touch with Us</button></a>
-   <a href="/contact us.html"><button>Contact Us</button></a>
-   <a href="/Subscribe.html"><button>Subscribe</button></a>
+      loadProfile();
+    </script>
 
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  
-  <!-- Social Media Row -->
-  <div class="footer-social">
-    <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/174/174848.png" alt="Facebook"></a>
-    <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/174/174855.png" alt="Twitter"></a>
-    <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/174/174857.png" alt="Instagram"></a>
-    <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/174/174879.png" alt="LinkedIn"></a>
-    <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/1384/1384060.png" alt="YouTube"></a>
-        <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/48/3046/3046123.png" alt="TikTok"></a>
-  </div>
-
-  <!-- Footer Columns -->
-  <div class="footer-columns">
-    
-    <!-- Left Column -->
-    <div class="footer-column">
-      <h3>About Us</h3>
-      <p>Hope of Tomorrow is committed to empowering communities, supporting volunteers, and delivering impactful services for those in need.</p>
-    </div>
-
-    <!-- Middle Column -->
-    <div class="footer-column">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="/Home-Page.html">Home</a></li>
-        <li><a href="/Services we offer.html">Services</a></li>
-        <li><a href="/Donate.html">Donate</a></li>
-        <li><a href="/Sign In-Sign Up.html">Sign In / Sign Up</a></li>
-        <li><a href="/Jobs.html">Jobs</a></li>
-        <li><a href="/Volunteer with-Us.html">Volunteer with Us</a></li>
-      </ul>
-    </div>
-
-    <!-- Right Column -->
-    <div class="footer-column">
-      <h3>Legal & Support</h3>
-      <ul>
-       <li><a href="/privacy.html">Privacy Policy</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="#">Terms & Conditions</a></li>
-        <li><a href="#">Disclaimer</a></li>
-        <li><a href="#">Help Center</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <hr>
-  <div class="footer-bottom">
-    <p>© <span id="year"></span> Hope of Tomorrow. All Rights Reserved.</p>
-  </div>
-
-</footer>
-
-<!-- ================= CSS ================= -->
-<script src="assets/js/site.js"></script>
-
-
-
-</body>
+    <script src="assets/js/site.js"></script>
+  </body>
 </html>
