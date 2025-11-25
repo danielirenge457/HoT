@@ -101,7 +101,7 @@
           <td>${staff.address}</td>
           <td>${staff.nationality}</td>
           <td>${staff.status}</td>
-          <td>${staff.photo ? `<img src="${staff.photo}" width="50" height="50" class="avatar">` : 'No Photo'}</td>
+          <td>${staff.photo ? `<img src="${staff.photo}" width="50" height="50" class="avatar" alt="${staff.name}">` : 'No Photo'}</td>
           <td>${currentUser.role === 'admin' ? `<select onchange="updateStatus(${index}, this.value)"><option value=\"Active\" ${staff.status === 'Active' ? 'selected' : ''}>Active</option><option value=\"Inactive\" ${staff.status === 'Inactive' ? 'selected' : ''}>Inactive</option></select>` : '-'}</td>
         `;
         if(staff.status === 'Active') {
