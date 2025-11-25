@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "create-admin": "node create-admin.js"
   },
   "keywords": ["ngo", "api", "express", "postgresql"],
   "author": "Daniel Irenge",
